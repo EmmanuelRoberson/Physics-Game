@@ -7,14 +7,23 @@ using UnityEngine.InputSystem;
 public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementActions
 {
     private PlayerControls controls;
+    private Vector3 moveInput;
 
-    public void OnEnable()
+    [SerializeField]
+    private float movementSpeed;
+
+    public void Awake()
     {
         if (controls == null)
         {
             controls = new PlayerControls();
             controls.PlayerMovement.SetCallbacks(this);
         }
+    }
+
+    public void OnEnable()
+    {
+       controls.PlayerMovement.Enable();
     }
 
     public void OnDisable()
@@ -32,10 +41,8 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                Debug.Log("Submit Performed");
                 break;
             case InputActionPhase.Started:
-                Debug.Log("Submit Started");
                 transform.position = new Vector3(
                     transform.position.x,
                     transform.position.y + 4,
@@ -43,19 +50,33 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
                 );
                 break;
             case InputActionPhase.Canceled:
-                Debug.Log("Submit Canceled");
                 break;
         }
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                moveInput = context.ReadValue<Vector2>();
+                break;
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Canceled:
+                moveInput = context.ReadValue<Vector2>();
+                break;
+        }
+    }
+
+    private void Move(InputAction.CallbackContext context)
+    {
+
     }
     
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Time.deltaTime * movementSpeed * new Vector3(moveInput.x, 0, moveInput.y) );
     }
 }
