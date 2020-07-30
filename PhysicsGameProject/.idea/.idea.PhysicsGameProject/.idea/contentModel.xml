@@ -25,6 +25,7 @@
           <e p="PlayerControls.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="CustomMath.cs" t="Include" />
           <e p="InputAssetMovement.cs" t="Include" />
           <e p="MouseControlledRotationBehaviour.cs" t="Include" />
           <e p="MovementBehaviour.cs" t="Include" />

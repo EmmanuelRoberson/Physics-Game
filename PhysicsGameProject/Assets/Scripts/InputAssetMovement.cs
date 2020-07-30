@@ -8,9 +8,16 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
 {
     private PlayerControls controls;
     private Vector3 moveInput;
+    private Vector2 mousePositionDelta;
+
+    [SerializeField] private GameObject mouseControlledObject;
+    [SerializeField] private GameObject movementControlledObject;
 
     [SerializeField]
     private float movementSpeed;
+    
+    [SerializeField]
+    private float mouseSensitivity;
 
     public void Awake()
     {
@@ -69,14 +76,17 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
         }
     }
 
-    private void Move(InputAction.CallbackContext context)
+    public void OnLook(InputAction.CallbackContext context)
     {
-
+        mousePositionDelta = context.ReadValue<Vector2>();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Time.deltaTime * movementSpeed * new Vector3(moveInput.x, 0, moveInput.y) );
+        Vector3 movementVector = CustomMath.DirectionalizedVector(transform.forward, moveInput).normalized;
+        transform.Translate(Time.deltaTime * movementSpeed * new Vector3(movementVector.x, 0f, movementVector.y));
+        mouseControlledObject.transform.eulerAngles += new Vector3(-mousePositionDelta.y, mousePositionDelta.x, 0);
+        movementControlledObject.transform.eulerAngles += new Vector3(0f,mousePositionDelta.x,0f);
     }
 }
