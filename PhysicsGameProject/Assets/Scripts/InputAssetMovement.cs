@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementActions
@@ -84,8 +81,8 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
     // Update is called once per frame
     void Update()
     {
-        Vector3 movementVector = CustomMath.DirectionalizedVector(transform.forward, moveInput).normalized;
-        transform.Translate(Time.deltaTime * movementSpeed * new Vector3(movementVector.x, 0f, movementVector.y));
+        Vector3 movementVector = CustomMath.DirectionalizeVector(transform.forward, moveInput).normalized;
+        transform.Translate(Time.deltaTime * movementSpeed * movementVector);
         mouseControlledObject.transform.eulerAngles += new Vector3(-mousePositionDelta.y, mousePositionDelta.x, 0);
         movementControlledObject.transform.eulerAngles += new Vector3(0f,mousePositionDelta.x,0f);
     }
