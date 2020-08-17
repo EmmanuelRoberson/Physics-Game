@@ -1,14 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementActions
 {
     private PlayerControls controls;
     private Vector3 moveInput;
+    private Vector3 movementDirection;
     private Vector2 mousePositionDelta;
 
+    private Transform selfTransform;
+
+    private Rigidbody rigidbody;
+    
     [SerializeField] private GameObject mouseControlledObject;
     [SerializeField] private GameObject movementControlledObject;
+    
+    [SerializeField] private float jumpSpeed;
 
     [SerializeField]
     private float movementSpeed;
@@ -18,11 +26,18 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
 
     public void Awake()
     {
+        selfTransform = transform;
+
         if (controls == null)
         {
-            controls = new PlayerControls();
-            controls.PlayerMovement.SetCallbacks(this);
+            //controls = new PlayerControls();
+            //controls.PlayerMovement.SetCallbacks(this);
         }
+    }
+
+    public void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     public void OnEnable()
@@ -34,11 +49,7 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
     {
         controls.PlayerMovement.Disable();
     }
-
-    public void Jump()
-    {
-        
-    }
+    
     
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -47,11 +58,7 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
             case InputActionPhase.Performed:
                 break;
             case InputActionPhase.Started:
-                transform.position = new Vector3(
-                    transform.position.x,
-                    transform.position.y + 4,
-                    transform.position.z
-                );
+                rigidbody.velocity = Vector3.up * jumpSpeed;
                 break;
             case InputActionPhase.Canceled:
                 break;
@@ -63,12 +70,16 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
         switch (context.phase)
         {
             case InputActionPhase.Performed:
+
                 moveInput = context.ReadValue<Vector2>();
+                
                 break;
             case InputActionPhase.Started:
                 break;
             case InputActionPhase.Canceled:
-                moveInput = context.ReadValue<Vector2>();
+
+                moveInput = Vector2.zero;
+                
                 break;
         }
     }
@@ -78,12 +89,18 @@ public class InputAssetMovement : MonoBehaviour, PlayerControls.IPlayerMovementA
         mousePositionDelta = context.ReadValue<Vector2>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        Vector3 movementVector = CustomMath.DirectionalizeVector(transform.forward, moveInput).normalized;
-        transform.Translate(Time.deltaTime * movementSpeed * movementVector);
-        mouseControlledObject.transform.eulerAngles += new Vector3(-mousePositionDelta.y, mousePositionDelta.x, 0);
-        movementControlledObject.transform.eulerAngles += new Vector3(0f,mousePositionDelta.x,0f);
+        Vector3 movementVector = 
+            selfTransform.forward * moveInput.y +
+            selfTransform.right * moveInput.x;
+
+        selfTransform.position += Time.deltaTime * movementSpeed * movementVector;
+
+        var eulerAngles = mouseControlledObject.transform.eulerAngles;
+        eulerAngles += new Vector3(-mousePositionDelta.y, 0, 0);
+        
+        mouseControlledObject.transform.eulerAngles = eulerAngles;
+        movementControlledObject.transform.eulerAngles += new Vector3(0f, mousePositionDelta.x,0f);
     }
 }

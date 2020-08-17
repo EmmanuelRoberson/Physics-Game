@@ -12,20 +12,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallPlayerMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseControlledRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomMath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IPlayerControllable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/MovementBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomMath.cs" />
+        <option value="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IPlayerControllable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BallRollerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BallPlayerMovementBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -42,6 +50,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,6 +97,12 @@
       <workItem from="1595947390525" duration="2389000" />
       <workItem from="1596126667902" duration="6788000" />
       <workItem from="1596469431105" duration="3398000" />
+      <workItem from="1596569120220" duration="6458000" />
+      <workItem from="1596731834591" duration="1042000" />
+      <workItem from="1597001255316" duration="3210000" />
+      <workItem from="1597164698350" duration="2969000" />
+      <workItem from="1597245736849" duration="3917000" />
+      <workItem from="1597681090879" duration="3806000" />
     </task>
     <servers />
   </component>

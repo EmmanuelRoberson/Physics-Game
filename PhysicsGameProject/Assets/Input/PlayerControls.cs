@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @PlayerControls : IInputActionCollection, IDisposable
+public class@PlayerControls : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
     public @PlayerControls()
