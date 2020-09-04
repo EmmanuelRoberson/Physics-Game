@@ -16,8 +16,8 @@ public class PlayerControlsMovementBehaviour : MonoBehaviour, PlayerControls.IPl
     {
         if (_controls == null)
         {
-            _controls = new PlayerControls();
-            _controls.PlayerMovement.SetCallbacks(this);
+            //_controls = new PlayerControls();
+            //_controls.PlayerMovement.SetCallbacks(this);
         }
     }
 

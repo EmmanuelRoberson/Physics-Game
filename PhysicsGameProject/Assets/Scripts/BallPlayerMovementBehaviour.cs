@@ -1,59 +1,78 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class BallPlayerMovementBehaviour : MonoBehaviour, IPlayerControllable
+public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayerMovementActions
 {
     [SerializeReference] private Transform _headTransform;
+    private Vector3 _headOffset;
 
     public float moveSpeed;
     
     private Transform _selfTransform;
+    private Rigidbody _selfRigidbody;
     
     private PlayerControls _controls;
-    private Vector3 _moveVector;
-    private Vector3 _lookVector;
+    private Vector3 _moveVector; // direction the ball will roll relative to self space
+    private Vector3 _lookVector; // direction the ball will face relative to the world space
+    private float _rollSpeed; // magnitude of the angular speed the ball will roll at
 
     public void Awake()
     {
         _selfTransform = transform;
-        PlayerControlsMovementBehaviour.AddPlayerMovement(this);
-    }
+        _selfRigidbody = GetComponent<Rigidbody>();
 
-    public void Move(params Vector3[] vector3s)
-    {
-        Vector3 inputVector = vector3s[0];
+        _headOffset = _headTransform.position - _selfTransform.position;
         
-        _moveVector =
-            _selfTransform.forward * inputVector.y +
-            _selfTransform.right * inputVector.x;
+        if (_controls == null)
+        { 
+            _controls = new PlayerControls();
+            _controls.PlayerMovement.SetCallbacks(this);
+        }
     }
 
-    public void Rotate(params Vector3[] vector3s)
+    public void LateUpdate()
     {
-        Vector3 mouseDeltaVector = vector3s[0];
-
-        _lookVector =
-            mouseDeltaVector;
-    }
-
-    public void CancelMove(params Vector3[] vector3s)
-    {
-        Vector3 inputVector = vector3s[0];
+        Vector3 rollVector = 
+            (_selfTransform.forward * _moveVector.x +
+             _selfTransform.right * _moveVector.y) * _rollSpeed;
         
-        _moveVector =
-            _selfTransform.forward * inputVector.y +
-            _selfTransform.right * inputVector.x;
-    }
-
-    public void FixedUpdate()
-    {
-        _selfTransform.position += moveSpeed * Time.fixedDeltaTime * _moveVector;
-
+        _selfRigidbody.angularVelocity = rollVector;
+        
+        _headTransform.position = _selfTransform.position + _headOffset;
+        
         Vector3 newEulerAngles = _headTransform.eulerAngles;
-        newEulerAngles += new Vector3(-_lookVector.y, 0, 0);
+        newEulerAngles += new Vector3(-_lookVector.y, _lookVector.x, 0);
         
         _headTransform.eulerAngles = newEulerAngles;
-        _selfTransform.localEulerAngles += new Vector3(0,_lookVector.x,0);
-        
+        _selfTransform.localEulerAngles += new Vector3(0, newEulerAngles.y,0);
     }
+
+    // INPUT ASSET OVERRIDE FUNCTIONS
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        _selfRigidbody.AddForce(0,10,0);
+    }
+
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                _moveVector = context.ReadValue<Vector2>();
+                break;
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Canceled:
+                _moveVector = Vector2.zero;
+                break;
+        }
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        _lookVector = context.ReadValue<Vector2>();
+    }
+    
+    //
 }
