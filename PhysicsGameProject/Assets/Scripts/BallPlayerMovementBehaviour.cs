@@ -8,6 +8,7 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
     private Vector3 _headOffset;
 
     public float moveSpeed;
+    private float _moveSpeedMagnitude = 10; //set magnitude so any changes made to moveSpeed are done x10
     
     private Transform _selfTransform;
     private Rigidbody _selfRigidbody;
@@ -15,7 +16,6 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
     private PlayerControls _controls;
     private Vector3 _moveVector; // direction the ball will roll relative to self space
     private Vector3 _lookVector; // direction the ball will face relative to the world space
-    private float _rollSpeed; // magnitude of the angular speed the ball will roll at
 
     public void Awake()
     {
@@ -33,11 +33,12 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
 
     public void LateUpdate()
     {
-        Vector3 rollVector = 
-            (_selfTransform.forward * _moveVector.x +
-             _selfTransform.right * _moveVector.y) * _rollSpeed;
-        
-        _selfRigidbody.angularVelocity = rollVector;
+        Vector3 rollVector =
+            (_selfTransform.forward * -_moveVector.x +
+             _selfTransform.right * _moveVector.y);
+
+        //_selfTransform.position += Time.deltaTime * rollVector;
+        _selfRigidbody.angularVelocity = (moveSpeed * _moveSpeedMagnitude * Time.fixedDeltaTime * rollVector);
         
         _headTransform.position = _selfTransform.position + _headOffset;
         
@@ -45,7 +46,7 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
         newEulerAngles += new Vector3(-_lookVector.y, _lookVector.x, 0);
         
         _headTransform.eulerAngles = newEulerAngles;
-        _selfTransform.localEulerAngles += new Vector3(0, newEulerAngles.y,0);
+        _selfTransform.localEulerAngles += new Vector3(0, _lookVector.x,0);
     }
 
     // INPUT ASSET OVERRIDE FUNCTIONS
