@@ -8,7 +8,7 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
     private Vector3 _headOffset;
 
     public float moveSpeed;
-    private float _moveSpeedMagnitude = 10; //set magnitude so any changes made to moveSpeed are done x10
+    private float _moveSpeedScalar = 10; //set magnitude so any changes made to moveSpeed are done x10
     
     private Transform _selfTransform;
     private Rigidbody _selfRigidbody;
@@ -33,12 +33,14 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
 
     public void LateUpdate()
     {
-        Vector3 rollVector =
-            (_selfTransform.forward * -_moveVector.x +
-             _selfTransform.right * _moveVector.y);
+        Vector3 strafeVector = _selfTransform.forward * -_moveVector.x; 
+        Vector3 forwardVector = _selfTransform.right * _moveVector.y;
 
-        //_selfTransform.position += Time.deltaTime * rollVector;
-        _selfRigidbody.angularVelocity = (moveSpeed * _moveSpeedMagnitude * Time.fixedDeltaTime * rollVector);
+        Vector3 movementVector = strafeVector + forwardVector;
+            
+        _selfTransform.position += Time.deltaTime * movementVector;
+        //_selfRigidbody.AddTorque(moveSpeed * _moveSpeedScalar * Time.fixedDeltaTime * strafeVector);
+        //_selfRigidbody.AddTorque(moveSpeed * _moveSpeedScalar * Time.fixedDeltaTime * forwardVector);
         
         _headTransform.position = _selfTransform.position + _headOffset;
         

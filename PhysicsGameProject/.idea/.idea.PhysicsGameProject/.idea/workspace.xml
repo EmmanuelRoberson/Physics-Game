@@ -16,6 +16,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseControlledRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollowBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomMath.cs" root0="FORCE_HIGHLIGHTING" />
@@ -35,6 +36,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BallPlayerMovementBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollowBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -73,10 +75,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="14396">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10760">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14396" />
+      <option name="pid" value="10760" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -106,6 +108,7 @@
       <workItem from="1597681090879" duration="3806000" />
       <workItem from="1599250103618" duration="3441000" />
       <workItem from="1599681603966" duration="2098000" />
+      <workItem from="1600201950765" duration="3598000" />
     </task>
     <servers />
   </component>
