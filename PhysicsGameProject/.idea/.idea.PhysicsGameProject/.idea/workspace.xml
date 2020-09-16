@@ -12,18 +12,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerNavigationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraRaycastBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IPlayerControllable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallPlayerMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MouseControlledRotationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollowBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Jammo-Character/Scripts/MovementInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomMath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerNavigationManagerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.2.3/Runtime/MeshOperations/ConnectElements.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IPlayerControllable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -36,6 +40,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputAssetMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControlsMovementBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BallPlayerMovementBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraRaycastBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerNavigationManagerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerNavigationBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Jammo-Character/Scripts/MovementInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollowBehaviour.cs" />
       </list>
     </option>
@@ -108,7 +116,8 @@
       <workItem from="1597681090879" duration="3806000" />
       <workItem from="1599250103618" duration="3441000" />
       <workItem from="1599681603966" duration="2098000" />
-      <workItem from="1600201950765" duration="3598000" />
+      <workItem from="1600201950765" duration="3771000" />
+      <workItem from="1600280822424" duration="6913000" />
     </task>
     <servers />
   </component>

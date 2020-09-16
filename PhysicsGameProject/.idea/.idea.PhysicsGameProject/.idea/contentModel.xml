@@ -24,17 +24,26 @@
         <e p="Input" t="Include">
           <e p="PlayerControls.cs" t="Include" />
         </e>
+        <e p="Jammo-Character" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CharacterSkinController.cs" t="Include" />
+            <e p="MovementInput.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="BallPlayerMovementBehaviour.cs" t="Include" />
           <e p="Camera" t="Include">
             <e p="CameraFollowBehaviour.cs" t="Include" />
           </e>
+          <e p="CameraRaycastBehaviour.cs" t="Include" />
           <e p="CustomMath.cs" t="Include" />
           <e p="InputAssetMovement.cs" t="Include" />
           <e p="IPlayerControllable.cs" t="Include" />
           <e p="MouseControlledRotationBehaviour.cs" t="Include" />
           <e p="MovementBehaviour.cs" t="Include" />
           <e p="PlayerControlsMovementBehaviour.cs" t="Include" />
+          <e p="PlayerNavigationBehaviour.cs" t="Include" />
+          <e p="PlayerNavigationManagerBehaviour.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

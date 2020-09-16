@@ -38,7 +38,7 @@ public class BallPlayerMovementBehaviour : MonoBehaviour, PlayerControls.IPlayer
 
         Vector3 movementVector = strafeVector + forwardVector;
             
-        _selfTransform.position += Time.deltaTime * movementVector;
+        _selfTransform.position += Time.deltaTime * movementVector  ;
         //_selfRigidbody.AddTorque(moveSpeed * _moveSpeedScalar * Time.fixedDeltaTime * strafeVector);
         //_selfRigidbody.AddTorque(moveSpeed * _moveSpeedScalar * Time.fixedDeltaTime * forwardVector);
         
