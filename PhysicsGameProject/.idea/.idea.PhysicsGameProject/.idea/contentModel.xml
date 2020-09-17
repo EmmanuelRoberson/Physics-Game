@@ -31,6 +31,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AI Navigation" t="Include">
+              <e p="Debug" t="Include">
+                <e p="NavMeshAgentBehaviourDebugger.cs" t="Include" />
+                <e p="TaskSourceBehaviourDebugger.cs" t="Include" />
+              </e>
+              <e p="NavMeshAgentBehaviour.cs" t="Include" />
+            </e>
+          </e>
           <e p="BallPlayerMovementBehaviour.cs" t="Include" />
           <e p="Camera" t="Include">
             <e p="CameraFollowBehaviour.cs" t="Include" />
@@ -42,8 +51,6 @@
           <e p="MouseControlledRotationBehaviour.cs" t="Include" />
           <e p="MovementBehaviour.cs" t="Include" />
           <e p="PlayerControlsMovementBehaviour.cs" t="Include" />
-          <e p="PlayerNavigationBehaviour.cs" t="Include" />
-          <e p="PlayerNavigationManagerBehaviour.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
