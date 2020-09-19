@@ -12,6 +12,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Health Interactions/HealthComponentDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AI Navigation/Debug/TaskSourceBehaviourDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FastIK/Scripts/FastIK/FastIKFabric.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -27,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AI Navigation/NavMeshAgentBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Jammo-Character/Scripts/MovementInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomMath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Health Interactions/HealthComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.2.3/Runtime/MeshOperations/ConnectElements.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -46,8 +48,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerNavigationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Jammo-Character/Scripts/MovementInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollowBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Health Interactions/HealthComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/AI Navigation/NavMeshAgentBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/AI Navigation/Debug/NavMeshAgentBehaviourDebugger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Health Interactions/HealthComponentDebugger.cs" />
       </list>
     </option>
   </component>
@@ -122,6 +126,7 @@
       <workItem from="1600201950765" duration="3771000" />
       <workItem from="1600280822424" duration="6913000" />
       <workItem from="1600359021702" duration="6045000" />
+      <workItem from="1600535261089" duration="4600000" />
     </task>
     <servers />
   </component>
