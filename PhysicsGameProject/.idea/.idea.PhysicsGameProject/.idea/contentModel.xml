@@ -52,6 +52,13 @@
               <e p="HealthComponent.cs" t="Include" />
               <e p="HealthComponentDebugger.cs" t="Include" />
             </e>
+            <e p="Interactables" t="Include">
+              <e p="ICarriable.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+            </e>
+            <e p="Tool Interaction" t="Include">
+              <e p="ToolComponent.cs" t="Include" />
+            </e>
           </e>
           <e p="IPlayerControllable.cs" t="Include" />
           <e p="MouseControlledRotationBehaviour.cs" t="Include" />
