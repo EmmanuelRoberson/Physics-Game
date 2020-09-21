@@ -10,7 +10,7 @@ public class NavMeshAgentBehaviour : MonoBehaviour
     private Queue<Transform> _destinationQueue;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _destinationQueue = new Queue<Transform>();

@@ -13,6 +13,7 @@ public class NavMeshAgentBehaviourDebugger : MonoBehaviour
     {
         _navMeshAgentBehaviour = GetComponent<NavMeshAgentBehaviour>();
         _navMeshAgentBehaviour.AddDestinationsToQueue(transformArray);
+        _navMeshAgentBehaviour.AddDestinationsToQueue(transformArray);
         _navMeshAgentBehaviour.QueNextDestination();
     }
 
