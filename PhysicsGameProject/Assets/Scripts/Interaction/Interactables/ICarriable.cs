@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ICarryable: IInteractable
+public interface ICarryable: IInteractable
 {
-    public void Interact()
-    {
-        
-    }
+    void Carry();
 }
