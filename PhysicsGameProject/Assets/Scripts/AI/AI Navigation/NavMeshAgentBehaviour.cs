@@ -16,7 +16,7 @@ public class NavMeshAgentBehaviour : MonoBehaviour
         _destinationQueue = new Queue<Transform>();
     }
 
-    //Enqueue more Vector3s to _destinationQueue
+    //Enqueue more Transforms to _destinationQueue
     public void AddDestinationsToQueue(params Transform[] destinations)
     {
         for (int i = 0; i < destinations.Length; i++)
