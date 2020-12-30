@@ -41,7 +41,9 @@
             </e>
             <e p="Ai Task System" t="Include">
               <e p="TaskBase.cs" t="Include" />
+              <e p="TaskManagerBehaviour.cs" t="Include" />
               <e p="TaskSourceBase.cs" t="Include" />
+              <e p="WorkerBase.cs" t="Include" />
             </e>
           </e>
           <e p="BallPlayerMovementBehaviour.cs" t="Include" />
